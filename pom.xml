@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <groupId>be.sgerard.cloudfoundry</groupId>
+    <artifactId>be.sgerard.cloudfoundry.oauth</artifactId>
+    <version>1.1.0-SNAPSHOT</version>
+    <packaging>pom</packaging>
+    <name>Cloud Foundry :: OAuth</name>
+
+    <modules>
+        <module>be.sgerard.cloudfoundry.oauth.app</module>
+    </modules>
+
+    <properties>
+        <project.build.sourceEncoding>windows-1252</project.build.sourceEncoding>
+
+        <spring.version>4.0.3.RELEASE</spring.version>
+        <cloudfoundry.identity.version>1.8.1</cloudfoundry.identity.version>
+        <spring.security.version>3.2.4.RELEASE</spring.security.version>
+        <spring.security.oauth.version>1.0.5.RELEASE</spring.security.oauth.version>
+    </properties>
+
+    <dependencyManagement>
+        <dependencies>
+            <dependency>
+                <groupId>org.cloudfoundry.identity</groupId>
+                <artifactId>cloudfoundry-identity-common</artifactId>
+                <version>${cloudfoundry.identity.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.cloudfoundry.identity</groupId>
+                <artifactId>cloudfoundry-identity-app</artifactId>
+                <version>${cloudfoundry.identity.version}</version>
+                <type>war</type>
+            </dependency>
+            <dependency>
+                <groupId>org.cloudfoundry.identity</groupId>
+                <artifactId>cloudfoundry-identity-api</artifactId>
+                <version>${cloudfoundry.identity.version}</version>
+                <type>war</type>
+            </dependency>
+
+            <dependency>
+                <groupId>org.codehaus.jackson</groupId>
+                <artifactId>jackson-mapper-asl</artifactId>
+                <version>1.9.2</version>
+            </dependency>
+
+            <dependency>
+                <groupId>log4j</groupId>
+                <artifactId>log4j</artifactId>
+                <version>1.2.14</version>
+            </dependency>
+
+            <dependency>
+                <groupId>javax.servlet</groupId>
+                <artifactId>javax.servlet-api</artifactId>
+                <version>3.0.1</version>
+            </dependency>
+            <dependency>
+                <groupId>javax.servlet</groupId>
+                <artifactId>jstl</artifactId>
+                <version>1.2</version>
+            </dependency>
+        </dependencies>
+    </dependencyManagement>
+
+    <build>
+        <pluginManagement>
+            <plugins>
+                <plugin>
+                    <groupId>org.apache.tomcat.maven</groupId>
+                    <artifactId>tomcat7-maven-plugin</artifactId>
+                    <version>2.2</version>
+                </plugin>
+            </plugins>
+        </pluginManagement>
+    </build>
+</project>
