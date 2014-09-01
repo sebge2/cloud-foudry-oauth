@@ -10,6 +10,8 @@
 
     <modules>
         <module>be.sgerard.cloudfoundry.oauth.app</module>
+        <module>be.sgerard.cloudfoundry.oauth.api</module>
+        <module>be.sgerard.cloudfoundry.oauth.uaa</module>
     </modules>
 
     <properties>
@@ -19,6 +21,15 @@
         <cloudfoundry.identity.version>1.8.1</cloudfoundry.identity.version>
         <spring.security.version>3.2.4.RELEASE</spring.security.version>
         <spring.security.oauth.version>1.0.5.RELEASE</spring.security.oauth.version>
+
+        <cloudfoundry.uaa.port>8080</cloudfoundry.uaa.port>
+        <cloudfoundry.uaa.url>http://localhost:${cloudfoundry.uaa.port}/uaa</cloudfoundry.uaa.url>
+
+        <cloudfoundry.api.port>9090</cloudfoundry.api.port>
+
+        <cloudfoundry.app.port>10000</cloudfoundry.app.port>
+        <cloudfoundry.app.url>http://localhost:${cloudfoundry.app.port}/app</cloudfoundry.app.url>
+        <cloudfoundry.app.login.url>http://localhost:${cloudfoundry.app.port}/login</cloudfoundry.app.login.url>
     </properties>
 
     <dependencyManagement>
@@ -30,15 +41,8 @@
             </dependency>
             <dependency>
                 <groupId>org.cloudfoundry.identity</groupId>
-                <artifactId>cloudfoundry-identity-app</artifactId>
+                <artifactId>cloudfoundry-identity-scim</artifactId>
                 <version>${cloudfoundry.identity.version}</version>
-                <type>war</type>
-            </dependency>
-            <dependency>
-                <groupId>org.cloudfoundry.identity</groupId>
-                <artifactId>cloudfoundry-identity-api</artifactId>
-                <version>${cloudfoundry.identity.version}</version>
-                <type>war</type>
             </dependency>
 
             <dependency>
@@ -70,9 +74,19 @@
         <pluginManagement>
             <plugins>
                 <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-dependency-plugin</artifactId>
+                    <version>2.2</version>
+                </plugin>
+                <plugin>
                     <groupId>org.apache.tomcat.maven</groupId>
                     <artifactId>tomcat7-maven-plugin</artifactId>
                     <version>2.2</version>
+                </plugin>
+                <plugin>
+                    <groupId>org.flywaydb</groupId>
+                    <artifactId>flyway-maven-plugin</artifactId>
+                    <version>3.0</version>
                 </plugin>
             </plugins>
         </pluginManagement>
