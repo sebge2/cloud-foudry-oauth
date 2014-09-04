@@ -26,7 +26,7 @@
         <cloudfoundry.uaa.url>http://localhost:${cloudfoundry.uaa.port}/uaa</cloudfoundry.uaa.url>
 
         <cloudfoundry.api.port>9090</cloudfoundry.api.port>
-        <cloudfoundry.api.url>http://localhost:${cloudfoundry.api.port}/uaa</cloudfoundry.api.url>
+        <cloudfoundry.api.url>http://localhost:${cloudfoundry.api.port}/api</cloudfoundry.api.url>
 
         <cloudfoundry.app.port>10000</cloudfoundry.app.port>
         <cloudfoundry.app.url>http://localhost:${cloudfoundry.app.port}/app</cloudfoundry.app.url>

@@ -29,7 +29,7 @@ public class TreeController {
 
     private RestOperations restTemplate;
 
-    private String treeUrlPattern = "http://localhost:8080/api/apps";
+    private String treeUrlPattern;
 
     public void setRestTemplate(RestOperations restTemplate) {
         this.restTemplate = restTemplate;
