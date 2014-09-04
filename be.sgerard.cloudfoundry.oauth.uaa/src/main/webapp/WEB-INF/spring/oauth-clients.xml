@@ -82,10 +82,10 @@
                             <entry key="autoapprove" value="true" />
                         </map>
                     </entry>
-                    <entry key="app">
+                    <entry key="${appClientId}">
                         <map>
-                            <entry key="id" value="app" />
-                            <entry key="secret" value="appclientsecret" />
+                            <entry key="id" value="${appClientId}" />
+                            <entry key="secret" value="${appClientSecret}" />
                             <entry key="authorized-grant-types" value="password,implicit,authorization_code,client_credentials" />
                             <entry key="scope"
                                 value="cloud_controller.read,cloud_controller.write,openid,password.write,scim.userids,organizations.acme" />

@@ -31,6 +31,8 @@
         <cloudfoundry.app.port>10000</cloudfoundry.app.port>
         <cloudfoundry.app.url>http://localhost:${cloudfoundry.app.port}/app</cloudfoundry.app.url>
         <cloudfoundry.app.login.url>http://localhost:${cloudfoundry.app.port}/login</cloudfoundry.app.login.url>
+        <cloudfoundry.app.client.id>app</cloudfoundry.app.client.id>
+        <cloudfoundry.app.client.secret>appclientsecret</cloudfoundry.app.client.secret>
     </properties>
 
     <dependencyManagement>

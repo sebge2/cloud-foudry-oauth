@@ -55,8 +55,8 @@
 
 	<bean id="tokenServices" class="org.cloudfoundry.identity.uaa.oauth.RemoteTokenServices">
 		<property name="checkTokenEndpointUrl" value="${checkTokenEndpointUrl}" />
-		<property name="clientId" value="app" />
-		<property name="clientSecret" value="appclientsecret" />
+		<property name="clientId" value="${appClientId}" />
+		<property name="clientSecret" value="${appClientSecret}" />
 	</bean>
 
 	<bean id="contentTypeFilter" class="org.cloudfoundry.identity.api.web.ContentTypeFilter">
